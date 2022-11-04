@@ -1,0 +1,144 @@
+:root {
+  font-size: 62.5%;
+
+  --card-color-primary: #f7dd43;
+  --card-title-border-color: #746615;
+  --card-bg-color: #1d1c19;
+  --bg: url(./assets/bg-yellow.svg);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body.blue {
+  --card-color-primary: #338af3;
+  --card-title-border-color: #338af3;
+  --card-bg-color: #202024;
+  --bg: url(./assets/bg-blue.svg);
+}
+
+body.green {
+  --card-color-primary: #047c3f;
+  --card-title-border-color: #047c3f;
+  --card-bg-color: #1a1f1b;
+  --bg: url(./assets/bg-green.svg);
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #121214;
+  background-image: var(--bg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-family: "Roboto", sans-serif;
+
+  color: #e1e1e6;
+}
+
+header {
+  margin-bottom: 6.3rem;
+}
+
+#app {
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+  padding-top: 5.2rem;
+}
+
+#cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.card {
+  background-color: var(--card-bg-color);
+  border-radius: 6px;
+  padding: 32px 23px;
+  border-bottom: 2px solid var(--card-color-primary);
+}
+
+#cards .card h2 {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  border-radius: 6px;
+  padding: 8px 16px;
+  width: fit-content;
+  border: 1px solid var(--card-title-border-color);
+  color: #f7dd43;
+  font-size: 2.4rem;
+
+  margin: auto;
+  margin-bottom: 5.3rem;
+}
+
+#cards .card span {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  line-height: 125%;
+  color: #e1e1e6;
+  font-weight: normal;
+}
+
+#cards .card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style: none;
+  width: 27rem;
+}
+
+#cards .card ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cards .card ul li strong {
+  font-size: 3.6rem;
+  font-weight: 900;
+}
+
+#cards .card ul li + li {
+  border-top: 1px solid #323238;
+  padding-top: 24px;
+}
+
+/*Animações*/
+.card {
+  opacity: 0;
+  animation: apper 0.2s forwards;
+}
+.card ul li strong:hover,
+.card ul li img:hover {
+  transform: scale(1.1);
+}
+
+.card ul li strong,
+.card ul li img {
+  transition: transform 0.5s;
+}
+
+@keyframes apper {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*Usando o @media*/
+@media (min-width: 700px) {
+  #cards {
+    max-width: 67rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
